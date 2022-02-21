@@ -9,7 +9,8 @@
   "scripts": {
     "format:prettier": "prettier --write *.md snippets/*",
     "format": "npm run format:prettier",
-    "publish": "vsce publish"
+    "publish": "vsce publish",
+    "package": "vsce package"
   },
   "engines": {
     "vscode": "^1.64.0"
