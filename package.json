@@ -1,8 +1,16 @@
 {
   "name": "jest-code-snippets",
   "displayName": "jest-code-snippets",
-  "description": "",
+  "description": "Code snippets for testing framework Jest",
+  "publisher": "wanglihua",
+  "icon": "images/jest_snippets_icon.png",
   "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "format:prettier": "prettier --write *.md snippets/*",
+    "format": "npm run format:prettier",
+    "publish": "vsce publish"
+  },
   "engines": {
     "vscode": "^1.64.0"
   },
@@ -33,5 +41,10 @@
     "type": "git",
     "url": "https://github.com/qluwlh/jest-code-snippets.git"
   },
-  "homepage": "https://github.com/qluwlh/jest-code-snippets/blob/main/README.md"
+  "homepage": "https://github.com/qluwlh/jest-code-snippets/blob/main/README.md",
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "prettier": "^2.5.1",
+    "vsce": "^2.6.7"
+  }
 }
