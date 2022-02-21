@@ -53,6 +53,37 @@
     ],
     "scope": "source.js"
   },
+  "fileReactComponent": {
+    "body": [
+      "import React from 'react';",
+      "import 'dependencies';",
+      "import { render } from '@testing-library/react';",
+      "import yourComponent from '../component';",
+      "",
+      "jest.mock('dependencies', () => {",
+      "  return () => {",
+      "    return <div>dependencies</div>;",
+      "  };",
+      "});",
+      "",
+      "describe('your component', () => {",
+      "  test('should pass this canary test', () => {",
+      "    expect(true).toBeTruthy();",
+      "  });",
+      "  describe('render', () => {",
+      "    test('', () => {",
+      "      const { getByText, asFragment, queryByText } = render();",
+      "      expect(getByText()).toBeInTheDocument();",
+      "      expect(queryByText()).toBeInTheDocument();",
+      "      expect(asFragment()).toMatchSnapshot();",
+      "    });",
+      "  });",
+      "});"
+    ],
+    "description": "",
+    "prefix": "jfrc",
+    "scope": "source.js"
+  },
   "afterAll": {
     "body": "afterAll(() => {\n\t$0\n});",
     "description": "afterAll function is called once after all specs",
