@@ -6,17 +6,39 @@
 
 Below is a list of all available snippets and the triggers of each one. The **→** means the `TAB` key.
 
-
 ### Files
 
-|  Trigger | Content       |
-| -------: | ------------- |
-|  `jff→` |   function |
-| `jffb→` | function for balance project |
+| Trigger | Content         |
+| ------: | --------------- |
+|  `jff→` | function        |
 | `jfrc→` | react component |
-| `jfrh→` | react hooks |
+| `jfrh→` | react hooks     |
 
+### Templates
 
+|  Trigger | Content                  |
+| -------: | ------------------------ |
+|   `jtf→` | function describe        |
+|  `jtft→` | function test            |
+|  `jtrc→` | react component describe |
+| `jtrct→` | react component test     |
+|  `jtrh→` | react hooks describe     |
+| `jtrht→` | react hooks test         |
+
+### Mock
+
+| Trigger | Content   |
+| ------: | --------- |
+|  `jfn→` | jest.fn   |
+|  `jmc→` | jest.mock |
+
+### React
+
+|  Trigger | Content                             |
+| -------: | ----------------------------------- |
+|  `imtr→` | import @testing-library/react       |
+| `imtue→` | import @testing-library/user-event  |
+| `imtrh→` | import @testing-library/react-hooks |
 
 ### Globals
 
@@ -88,13 +110,6 @@ Below is a list of all available snippets and the triggers of each one. The **�
 |    `tte→` | toThrowError                       |
 |  `ttems→` | toThrowErrorMatchingSnapshot       |
 | `ttemis→` | toThrowErrorMatchingInlineSnapshot |
-
-### Templates
-
-| Trigger | Content                 |
-| ------: | ----------------------- |
-|  `cut→` | test a class under test |
-|  `jfn→` | jest.fn                 |
 
 ## Settings
 

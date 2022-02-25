@@ -4,7 +4,7 @@
   "description": "Code snippets for testing framework Jest",
   "publisher": "wanglihua",
   "icon": "images/jest_snippets_icon.png",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "scripts": {
     "format:prettier": "prettier --write *.md snippets/*",

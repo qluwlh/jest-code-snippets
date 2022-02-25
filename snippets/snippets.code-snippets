@@ -1,59 +1,46 @@
 {
-  "fileFunction": {
+  "JestFileFunction": {
+    "body": [
+      "import dependencies from 'dependencies';",
+      "import yourModule from '../yourModule';",
+      "",
+      "jest.mock('dependencies');",
+      "",
+      "describe('your module', () => {",
+      "  test('should pass this canary test', () => {",
+      "    expect(true).toBeTruthy();",
+      "  });",
+      "  describe('your function', () => {",
+      "    beforeEach(() => {});",
+      "    afterEach(() => {",
+      "      jest.resetAllMocks();",
+      "    });",
+      "    test('should return XXX for argument XXX', () => {",
+      "      const arg = '';",
+      "      const result = yourFunction(arg);",
+      "      const expected = '';",
+      "      expect(result).toEqual(expected);",
+      "    });",
+      "    test('should return XXX for argument XXX', () => {",
+      "      const arg = '';",
+      "      const result = yourFunction(arg);",
+      "      const expected = '';",
+      "      expect(result).toEqual(expected);",
+      "    });",
+      "    test('should throw an exception if argument is XXX', () => {",
+      "      const arg = '';",
+      "      expect(() => {",
+      "        yourFunction(arg);",
+      "      }).toThrow('error info');",
+      "    });",
+      "  });",
+      "});"
+    ],
+    "description": "create a function template for a file",
     "prefix": "jff",
-    "description": "create a function jest test",
-    "body": [
-      "import dependencies from 'dependencies';",
-      "import yourModule from '../yourModule';",
-      "",
-      "jest.mock('dependencies');",
-      "",
-      "describe('your module', () => {",
-      "  test('should pass this canary test', () => {",
-      "    expect(true).toBeTruthy();",
-      "  });",
-      "  describe('your function', () => {",
-      "    beforeEach(() => {});",
-      "    afterEach(() => {",
-      "      jest.resetAllMocks();",
-      "    });",
-      "    test('', () => {});",
-      "  });",
-      "});"
-    ],
     "scope": "source.js"
   },
-  "fileFunctionBalance": {
-    "prefix": "jffb",
-    "description": "create a function jest test for balance project",
-    "body": [
-      "import dependencies from 'dependencies';",
-      "import MockGlobal from '@tests/utils/MockGlobal';",
-      "import yourModule from '../yourModule';",
-      "",
-      "const mockNavigator = new MockGlobal('navigator');",
-      "const mockWindow = new MockGlobal('window');",
-      "",
-      "jest.mock('dependencies');",
-      "",
-      "describe('your module', () => {",
-      "  test('should pass this canary test', () => {",
-      "    expect(true).toBeTruthy();",
-      "  });",
-      "  describe('your function', () => {",
-      "    beforeEach(() => {});",
-      "    afterEach(() => {",
-      "      mockNavigator.recover();",
-      "      mockWindow.recover();",
-      "      jest.resetAllMocks();",
-      "    });",
-      "    test('', () => {});",
-      "  });",
-      "});"
-    ],
-    "scope": "source.js"
-  },
-  "fileReactComponent": {
+  "JestFileReactComponent": {
     "body": [
       "import React from 'react';",
       "import 'dependencies';",
@@ -62,7 +49,7 @@
       "",
       "jest.mock('dependencies', () => {",
       "  return () => {",
-      "    return <div>dependencies</div>;",
+      "    return <div>dependencies<\/div>;",
       "  };",
       "});",
       "",
@@ -73,7 +60,6 @@
       "  describe('render', () => {",
       "    test('', () => {",
       "      const { getByText, asFragment, queryByText } = render();",
-      "      expect(getByText()).toBeInTheDocument();",
       "      expect(queryByText()).toBeInTheDocument();",
       "      expect(asFragment()).toMatchSnapshot();",
       "    });",
@@ -82,6 +68,143 @@
     ],
     "description": "",
     "prefix": "jfrc",
+    "scope": "source.js"
+  },
+  "JestFileReactHooks": {
+    "body": [
+      "import { renderHook, act } from '@testing-library/react-hooks';",
+      "import useHooks from '../useHooks';",
+      "",
+      "describe('your hooks', () => {",
+      "  test('should pass this canary test', () => {",
+      "    expect(true).toBeTruthy();",
+      "  });",
+      "  describe('did mount state', () => {",
+      "    test('default state', () => {",
+      "      const { result } = renderHook(() => {",
+      "        return useHooks();",
+      "      });",
+      "      expect(result.current.state).toBe();",
+      "    });",
+      "  });",
+      "  describe('your test action', () => {",
+      "    test('XXX should be XXX when execute XXX action', () => {",
+      "      const { result } = renderHook(() => {",
+      "        return useHooks();",
+      "      });",
+      "      expect(result.current.state).toBe();",
+      "      act(() => {",
+      "        result.current.action();",
+      "      });",
+      "      expect(result.current.state).toBe();",
+      "    });",
+      "  });",
+      "});"
+    ],
+    "description": "create a react hooks template for a file",
+    "prefix": "jfrh",
+    "scope": "source.js"
+  },
+  "JestTemplateFunction": {
+    "body": [
+      "describe('your function', () => {",
+      "  test('should return XXX for argument XXX', () => {",
+      "    const arg = '';",
+      "    const result = yourFunction(arg);",
+      "    const expected = '';",
+      "    expect(result).toEqual(expected);",
+      "  });",
+      "  test('should return XXX for argument XXX', () => {",
+      "    const arg = '';",
+      "    const result = yourFunction(arg);",
+      "    const expected = '';",
+      "    expect(result).toEqual(expected);",
+      "  });",
+      "  test('should throw an exception if argument is XXX', () => {",
+      "    const arg = '';",
+      "    expect(() => {",
+      "      yourFunction(arg);",
+      "    }).toThrow('error info');",
+      "  });",
+      "});"
+    ],
+    "description": "create a function describe template",
+    "prefix": "jtf",
+    "scope": "source.js"
+  },
+  "JestTemplateReactComponent": {
+    "body": [
+      "describe('render', () => {",
+      "  test('', () => {",
+      "    const { queryByText } = render();",
+      "    expect(queryByText()).toBeInTheDocument();",
+      "    expect(asFragment()).toMatchSnapshot();",
+      "  });",
+      "});"
+    ],
+    "description": "",
+    "prefix": "jtrc",
+    "scope": "source.js"
+  },
+  "JestTemplateReactComponentTest": {
+    "body": [
+      "test('', () => {",
+      "  const { queryByText } = render();",
+      "  expect(queryByText()).toBeInTheDocument();",
+      "  expect(asFragment()).toMatchSnapshot();",
+      "});"
+    ],
+    "description": "",
+    "prefix": "jtrct",
+    "scope": "source.js"
+  },
+  "JestTemplateReactHooks": {
+    "body": [
+      "describe('your test action', () => {",
+      "  test('XXX should be XXX when execute XXX action', () => {",
+      "    const { result } = renderHook(() => {",
+      "      return useHooks();",
+      "    });",
+      "    expect(result.current.state).toBe();",
+      "    act(() => {",
+      "      result.current.action();",
+      "    });",
+      "    expect(result.current.state).toBe();",
+      "  });",
+      "});"
+    ],
+    "description": "react hooks template",
+    "prefix": "jtrh",
+    "scope": "source.js"
+  },
+  "JestTemplateReactHooksTest": {
+    "body": [
+      "test('XXX should be XXX when execute XXX action', () => {",
+      "  const { result } = renderHook(() => {",
+      "    return useHooks();",
+      "  });",
+      "  expect(result.current.state).toBe();",
+      "  act(() => {",
+      "    result.current.action();",
+      "  });",
+      "  expect(result.current.state).toBe();",
+      "});"
+    ],
+    "description": "create a react hooks case",
+    "prefix": "jtrht",
+    "scope": "source.js"
+  },
+  "JestTemplateTestFunction": {
+    "body": [
+      "test('should return XXX for argument XXX', () => {",
+      "  const arg = '';",
+      "  const result = yourFunction(arg);",
+      "  const expected = '';",
+      "  expect(result).toEqual(expected);",
+      "});"
+    ],
+    "description": "create a function case",
+    "prefix": "jtft",
     "scope": "source.js"
   },
   "afterAll": {
@@ -171,6 +294,24 @@
     "prefix": "expr",
     "scope": "source.js"
   },
+  "importTestingLibraryReact": {
+    "body": "import { render } from '@testing-library/react';",
+    "description": "import @testing-library/react",
+    "prefix": "imtr",
+    "scope": "source.js"
+  },
+  "importTestingLibraryReactHooks": {
+    "body": "import { renderHook, act } from '@testing-library/react-hooks';",
+    "description": "import @testing-library/react-hooks",
+    "prefix": "imtrh",
+    "scope": "source.js"
+  },
+  "importTestingLibraryUserEvent": {
+    "body": "import userEvent from '@testing-library/user-event';",
+    "description": "import @testing-library/user-event",
+    "prefix": "imtue",
+    "scope": "source.js"
+  },
   "it": {
     "body": "it('${1:should }', () => {\n\t$0\n});",
     "description": "creates an it block",
@@ -218,6 +359,12 @@
     "body": "jest.fn($0)",
     "description": "creates jest.fn()",
     "prefix": "jfn",
+    "scope": "source.js"
+  },
+  "jest.mock": {
+    "body": "jest.mock($0)",
+    "description": "creates jest.mock()",
+    "prefix": "jmc",
     "scope": "source.js"
   },
   "template:cut": {
